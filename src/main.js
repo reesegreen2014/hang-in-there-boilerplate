@@ -107,6 +107,11 @@ var button2 = document.querySelector('#button2');
 var button3 = document.querySelector('#button3');
 var button4 = document.querySelector('#button4');
 
+var picture = document.querySelector('#picture1');
+
+var heading = document.querySelector('#heading1');
+var quote = document.querySelector('#quote1');
+
 button1.addEventListener('click', () => {
   console.log('button1')
 });
@@ -116,12 +121,17 @@ button2.addEventListener('click', () => {
 });
 
 button3.addEventListener('click', () => {
-  console.log('button3')
+  heading.innerText = "Hello World"
+  quote.innerText = "this is another line"
+  // picture.src = imagePaths[season];
+
 });
 
 button4.addEventListener('click', () => {
   console.log('button4')
 });
+
+
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
