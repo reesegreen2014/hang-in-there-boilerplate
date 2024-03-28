@@ -103,14 +103,14 @@ var currentPoster;
 
 // event listeners go here 👇
 var saveThis = document.querySelector('.save-poster');
-var showSave = document.querySelector('.showSave');
+var showSave = document.querySelector('.show-saved');
 var showAnother = document.querySelector('.show-random');
-var makeYourown = document.querySelector('.makeYourown');
+var makeYourown = document.querySelector('.show-form');
 
-var picture = document.querySelector('#picture1');
+var picture = document.querySelector('.picture1');
 
 var heading = document.querySelector('.poster-title');
- var quote = document.querySelector('#quote1');
+var quote = document.querySelector('.poster-quote');
 
 saveThis.addEventListener('click', () => {
   console.log('button1')
@@ -122,7 +122,7 @@ showSave.addEventListener('click', () => {
 
 showAnother.addEventListener('click', () => {
   heading.innerText = "Hello World"
-   quote.innerText = "this is another line"
+  quote.innerText = "this is another line"
    //picture.src = imagePaths[season];
 
 });
