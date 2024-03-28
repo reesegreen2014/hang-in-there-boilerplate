@@ -102,6 +102,36 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+var saveThis = document.querySelector('.save-poster');
+var showSave = document.querySelector('.showSave');
+var showAnother = document.querySelector('.show-random');
+var makeYourown = document.querySelector('.makeYourown');
+
+var picture = document.querySelector('#picture1');
+
+var heading = document.querySelector('.poster-title');
+ var quote = document.querySelector('#quote1');
+
+saveThis.addEventListener('click', () => {
+  console.log('button1')
+});
+
+showSave.addEventListener('click', () => {
+  console.log('button2')
+});
+
+showAnother.addEventListener('click', () => {
+  heading.innerText = "Hello World"
+   quote.innerText = "this is another line"
+   //picture.src = imagePaths[season];
+
+});
+
+makeYourown.addEventListener('click', () => {
+  console.log('button4')
+});
+
+
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
