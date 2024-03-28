@@ -107,7 +107,7 @@ var showSave = document.querySelector('.show-saved');
 var showAnother = document.querySelector('.show-random');
 var makeYourown = document.querySelector('.show-form');
 
-var picture = document.querySelector('.picture1');
+var picture = document.querySelector('.poster-img');
 
 var heading = document.querySelector('.poster-title');
 var quote = document.querySelector('.poster-quote');
@@ -121,9 +121,9 @@ showSave.addEventListener('click', () => {
 });
 
 showAnother.addEventListener('click', () => {
-  heading.innerText = "Hello World"
-  quote.innerText = "this is another line"
-   //picture.src = imagePaths[season];
+  heading.innerText = titles[Math.floor(Math.random()*titles.length)]
+  quote.innerText = quotes[Math.floor(Math.random()*quotes.length)]
+  picture.src = images[Math.floor(Math.random()*images.length)]
 
 });
 
