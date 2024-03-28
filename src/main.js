@@ -102,6 +102,26 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+var button1 = document.querySelector('#button1');
+var button2 = document.querySelector('#button2');
+var button3 = document.querySelector('#button3');
+var button4 = document.querySelector('#button4');
+
+button1.addEventListener('click', () => {
+  console.log('button1')
+});
+
+button2.addEventListener('click', () => {
+  console.log('button2')
+});
+
+button3.addEventListener('click', () => {
+  console.log('button3')
+});
+
+button4.addEventListener('click', () => {
+  console.log('button4')
+});
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
