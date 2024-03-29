@@ -108,6 +108,9 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+var mainPoster = document.querySelector('.main-poster')
+var posterForm = document.querySelector(".poster-form")
+
 var saveThis = document.querySelector('.save-poster');
 var showSave = document.querySelector('.show-saved');
 var showAnother = document.querySelector('.show-random');
@@ -129,6 +132,8 @@ saveThis.addEventListener('click', () => {
 });
 
 showSave.addEventListener('click', () => {
+  mainPoster.classList.add("hidden")
+
   console.log('button2')
 });
 
@@ -139,11 +144,11 @@ showAnother.addEventListener('click', () => {
    
 });
 
-
 makeYourown.addEventListener('click', () => {
+  mainPoster.classList.add("hidden")
+  posterForm.classList.remove("hidden")
   console.log('button4')
 });
-
 
 
 // functions and event handlers go here 👇
