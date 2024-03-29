@@ -1,5 +1,11 @@
 // query selector variables go here 👇
 
+function start() {
+  heading.innerText = titles[1]
+  quote.innerText = quotes[1]
+  picture.src = images[1]
+}
+
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -107,13 +113,19 @@ var showSave = document.querySelector('.show-saved');
 var showAnother = document.querySelector('.show-random');
 var makeYourown = document.querySelector('.show-form');
 
-var picture = document.querySelector('.picture1');
+var picture = document.querySelector('.poster-img');
 
 var heading = document.querySelector('.poster-title');
 var quote = document.querySelector('.poster-quote');
 
 saveThis.addEventListener('click', () => {
-  console.log('button1')
+  savedPosters.push({
+    heading:heading.innerText,
+    quote:quote.innerText,
+    picture: picture.src
+  
+  })
+  console.log("you saved this",savedPosters)
 });
 
 showSave.addEventListener('click', () => {
@@ -121,11 +133,12 @@ showSave.addEventListener('click', () => {
 });
 
 showAnother.addEventListener('click', () => {
-  heading.innerText = "Hello World"
-  quote.innerText = "this is another line"
-   //picture.src = imagePaths[season];
-
+  heading.innerText = titles[Math.floor(Math.random()*titles.length)]
+  quote.innerText = quotes[Math.floor(Math.random()*quotes.length)]
+  picture.src = images[Math.floor(Math.random()*images.length)]
+   
 });
+
 
 makeYourown.addEventListener('click', () => {
   console.log('button4')
@@ -146,3 +159,6 @@ function createPoster(imageURL, title, quote) {
     title: title, 
     quote: quote}
 }
+
+
+start()
