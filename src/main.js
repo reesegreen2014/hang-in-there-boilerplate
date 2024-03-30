@@ -1,11 +1,6 @@
 // query selector variables go here 👇
 
-function start() {
-  //   console.log('start')
-  heading.innerText = titles[1]
-  quote.innerText = quotes[1]
-  picture.src = images[1]
-}
+
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -108,6 +103,16 @@ var quotes = [
 var savedPosters = [];
 var currentPoster;
 
+
+
+function start() {
+  console.log('ss', titles.length)
+  //   console.log('start')
+  heading.innerText = titles[getRandomIndex(titles)]
+  quote.innerText = quotes[getRandomIndex(quotes)]
+  picture.src = images[getRandomIndex(images)]
+}
+
 // event listeners go here 👇
 var mainPoster = document.querySelector('.main-poster')
 var posterForm = document.querySelector(".poster-form")
@@ -126,37 +131,40 @@ var posterImageUrl = document.getElementById('poster-image-url');
 var posterTitle = document.getElementById('poster-title');
 var posterQuote = document.getElementById('poster-quote');
 var form = document.querySelector('.poster-form form');
-
+var savedPostersGrid = document.querySelector('.saved-posters-grid');
 
 
 saveThis.addEventListener('click', () => {
-
-  let hasitem = false
-
-  for (var i = 0; i < savedPosters.length; ++i) {
-    if (savedPosters[i].heading === heading.innerText &&
-      savedPosters[i].quote === quote.innerText &&
-      savedPosters[i].picture === picture.src) {
-        hasitem = true
-      } 
+  var dattaHolder = {
+    heading: heading.innerText,
+    quote: quote.innerText,
+    picture: picture.src
   }
 
-  if (hasitem === false) {
+  if (cheakForDubbles(dattaHolder) === false) {
     savedPosters.push({
       heading: heading.innerText,
       quote: quote.innerText,
       picture: picture.src
     })
   }
-
-
-
   console.log("you saved this", savedPosters)
 });
 
 showSave.addEventListener('click', () => {
+  savedPostersGrid.innerHTML = ''
   mainPoster.classList.add("hidden")
   savedPostersView.classList.remove("hidden")
+  for (var i = 0; i < savedPosters.length; ++i) {
+
+    savedPostersGrid.innerHTML = savedPostersGrid.innerHTML +
+      `<article class="poster">
+        <img class="poster-img" src=${savedPosters[i].picture} alt="nothin' to see here">
+        <h1 class="poster-title">${savedPosters[i].heading}</h1>
+        <h3 class="poster-quote">${savedPosters[i].quote}</h3>
+       </article>`
+  }
+
   console.log('button2')
 });
 
@@ -173,17 +181,12 @@ makeYourown.addEventListener('click', () => {
   console.log('button4')
 });
 
-
 showMain.addEventListener('click', () => {
   mainPoster.classList.remove("hidden")
   posterForm.classList.add("hidden")
 
-
-
   console.log('button2')
 });
-
-
 
 backToMain.addEventListener('click', () => {
   mainPoster.classList.remove("hidden")
@@ -191,6 +194,7 @@ backToMain.addEventListener('click', () => {
   console.log('button2')
 });
 
+// Make Poster
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -200,10 +204,24 @@ form.addEventListener('submit', (event) => {
   heading.innerText = posterTitle.value
   quote.innerText = posterQuote.value
   picture.src = posterImageUrl.value
+
+  var dattaHolder = {
+    heading:posterTitle.value,
+    quote: posterQuote.value,
+    picture: posterImageUrl.value
+  }
+
+  if (cheakForDubbles(dattaHolder) === false) {
+    images.push(posterImageUrl.value)
+    quotes.push(posterQuote.value)
+    titles.push(posterTitle.value)
+    savedPosters.push({
+      heading: posterTitle.value,
+      quote: posterQuote.value,
+      picture: posterImageUrl.value
+    })
+  }
 });
-
-
-
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
@@ -219,6 +237,16 @@ function createPoster(imageURL, title, quote) {
     quote: quote
   }
 }
+function cheakForDubbles(datta) {
 
+  for (var i = 0; i < savedPosters.length; ++i) {
+    if (savedPosters[i].heading === datta.heading &&
+      savedPosters[i].quote === datta.quote &&
+      savedPosters[i].picture === datta.picture) {
+      return true
+    }
+  }
+  return false
+}
 
 start()
