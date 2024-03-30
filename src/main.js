@@ -201,12 +201,12 @@ form.addEventListener('submit', (event) => {
   mainPoster.classList.remove("hidden")
   posterForm.classList.add("hidden")
 
-  heading.innerText = posterTitle.value
+  heading.innerText = String(posterTitle.value).toUpperCase()
   quote.innerText = posterQuote.value
   picture.src = posterImageUrl.value
 
   var dattaHolder = {
-    heading:posterTitle.value,
+    heading:String(posterTitle.value).toUpperCase(),
     quote: posterQuote.value,
     picture: posterImageUrl.value
   }
@@ -214,9 +214,9 @@ form.addEventListener('submit', (event) => {
   if (cheakForDubbles(dattaHolder) === false) {
     images.push(posterImageUrl.value)
     quotes.push(posterQuote.value)
-    titles.push(posterTitle.value)
+    titles.push(String(posterTitle.value).toUpperCase())
     savedPosters.push({
-      heading: posterTitle.value,
+      heading: String(posterTitle.value).toUpperCase(),
       quote: posterQuote.value,
       picture: posterImageUrl.value
     })
