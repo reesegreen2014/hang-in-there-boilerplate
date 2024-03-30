@@ -105,13 +105,6 @@ var currentPoster;
 
 
 
-function start() {
-  console.log('ss', titles.length)
-  //   console.log('start')
-  heading.innerText = titles[getRandomIndex(titles)]
-  quote.innerText = quotes[getRandomIndex(quotes)]
-  picture.src = images[getRandomIndex(images)]
-}
 
 // event listeners go here 👇
 var mainPoster = document.querySelector('.main-poster')
@@ -158,7 +151,7 @@ showSave.addEventListener('click', () => {
   for (var i = 0; i < savedPosters.length; ++i) {
 
     savedPostersGrid.innerHTML = savedPostersGrid.innerHTML +
-      `<article class="poster">
+      `<article class="poster" ondblclick="deleteItem(${i})">
         <img class="poster-img" src=${savedPosters[i].picture} alt="nothin' to see here">
         <h1 class="poster-title">${savedPosters[i].heading}</h1>
         <h3 class="poster-quote">${savedPosters[i].quote}</h3>
@@ -229,14 +222,6 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function createPoster(imageURL, title, quote) {
-  return {
-    id: Date.now(),
-    imageURL: imageURL,
-    title: title,
-    quote: quote
-  }
-}
 function cheakForDubbles(datta) {
 
   for (var i = 0; i < savedPosters.length; ++i) {
@@ -247,6 +232,27 @@ function cheakForDubbles(datta) {
     }
   }
   return false
+}
+
+function deleteItem(index) {
+  savedPosters.splice(index, 1)
+  savedPostersGrid.innerHTML = ''
+  for (var i = 0; i < savedPosters.length; ++i) {
+
+    savedPostersGrid.innerHTML = savedPostersGrid.innerHTML +
+      `<article class="poster" ondblclick="deleteItem(${i})">
+        <img class="poster-img" src=${savedPosters[i].picture} alt="nothin' to see here">
+        <h1 class="poster-title">${savedPosters[i].heading}</h1>
+        <h3 class="poster-quote">${savedPosters[i].quote}</h3>
+       </article>`
+  }  
+}
+
+function start() {
+  console.log('ss', titles.length)
+  heading.innerText = titles[getRandomIndex(titles)]
+  quote.innerText = quotes[getRandomIndex(quotes)]
+  picture.src = images[getRandomIndex(images)]
 }
 
 start()
