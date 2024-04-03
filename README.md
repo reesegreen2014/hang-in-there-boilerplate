@@ -23,9 +23,9 @@ we have spent 10 colective hours
 // Reese (https://github.com/reesegreen2014) & Marshall (https://github.com/marshallhotaling)
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
-<!-- The learning goals of this project were to write JavaScript that manipulated the HTML without changing it directly. The CSS was provided. The other learning goal was learning to work collabortively. We worked within VS Code and Github to complete this project. -->
+// The learning goals of this project were to write JavaScript that manipulated the HTML without changing it directly. The CSS was provided. The other learning goal was learning to work collabortively. We worked within VS Code and Github to complete this project. 
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-<!-- The biggest win was accomplishing this and making the page functional and meeting the requirements. Another big win was working collabortively and learning new topics together.
-The challenge we faced is that some of the functionality that was required to build this was not taught yet, so it required a lot of researching and self-teaching new topics. -->
+//The biggest win was accomplishing this and making the page functional and meeting the requirements. Another big win was working collabortively and learning new topics together.
+The challenge we faced is that some of the functionality that was required to build this was not taught yet, so it required a lot of researching and self-teaching new topics. 
