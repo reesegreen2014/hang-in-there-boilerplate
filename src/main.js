@@ -1,4 +1,22 @@
 // query selector variables go here 👇
+var mainPoster = document.querySelector('.main-poster')
+var posterForm = document.querySelector(".poster-form")
+var showMain = document.querySelector(".show-main");
+var saveThis = document.querySelector('.save-poster');
+var showSave = document.querySelector('.show-saved');
+var showAnother = document.querySelector('.show-random');
+var makeYourown = document.querySelector('.show-form');
+var makePoster = document.querySelector('.make-poster');
+var picture = document.querySelector('.poster-img');
+var savedPostersView = document.querySelector('.saved-posters');
+var heading = document.querySelector('.poster-title');
+var quote = document.querySelector('.poster-quote');
+var backToMain = document.querySelector('.back-to-main');
+var posterImageUrl = document.getElementById('poster-image-url');
+var posterTitle = document.getElementById('poster-title');
+var posterQuote = document.getElementById('poster-quote');
+var form = document.querySelector('.poster-form form');
+var savedPostersGrid = document.querySelector('.saved-posters-grid');
 
 
 
@@ -107,24 +125,7 @@ var currentPoster;
 
 
 // event listeners go here 👇
-var mainPoster = document.querySelector('.main-poster')
-var posterForm = document.querySelector(".poster-form")
-var showMain = document.querySelector(".show-main");
-var saveThis = document.querySelector('.save-poster');
-var showSave = document.querySelector('.show-saved');
-var showAnother = document.querySelector('.show-random');
-var makeYourown = document.querySelector('.show-form');
-var makePoster = document.querySelector('.make-poster');
-var picture = document.querySelector('.poster-img');
-var savedPostersView = document.querySelector('.saved-posters');
-var heading = document.querySelector('.poster-title');
-var quote = document.querySelector('.poster-quote');
-var backToMain = document.querySelector('.back-to-main');
-var posterImageUrl = document.getElementById('poster-image-url');
-var posterTitle = document.getElementById('poster-title');
-var posterQuote = document.getElementById('poster-quote');
-var form = document.querySelector('.poster-form form');
-var savedPostersGrid = document.querySelector('.saved-posters-grid');
+
 
 
 saveThis.addEventListener('click', () => {
